@@ -1,0 +1,53 @@
+
+@theam-color:#d44439;
+@font-face {
+    font-family: 'iconfont';  /* project id 1764015 */
+    src: url('//at.alicdn.com/t/font_1764015_hxcq1jdtkgo.eot');
+    src: url('//at.alicdn.com/t/font_1764015_hxcq1jdtkgo.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1764015_hxcq1jdtkgo.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1764015_hxcq1jdtkgo.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1764015_hxcq1jdtkgo.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1764015_hxcq1jdtkgo.svg#iconfont') format('svg');
+  }
+.tab-head{
+    background: @theam-color;
+    padding-bottom: 10px;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    padding:5px 10px;
+    justify-content: space-between;
+    span {
+        line-height: 40px;
+        color: #f1f1f1;
+        font-size: 20px;
+        line-height: 40px;
+        i{
+            font-size: 20px;
+        }
+    }
+}
+.tab{
+    display: flex;
+    flex-direction: row;
+    padding:5px 10px;
+    justify-content: space-between;
+    a{
+        flex: 1;
+        text-align: center;
+    }
+    
+}
+.select{
+    width: 30%;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    margin-top: 3px;
+    padding-bottom: 2px;
+    content: '';
+    // 10% 115% 220%
+    transform: translate(10%,0);
+    transition:.3s ease-in-out;
+}
