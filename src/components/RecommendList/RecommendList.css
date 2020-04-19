@@ -2,6 +2,7 @@
   padding: 1rem;
 }
 .itembox {
+  margin-top: 0.5rem;
   text-align: center;
 }
 .recommend-item {
@@ -14,7 +15,14 @@
   width: 100%;
 }
 .recommend-item span {
-  font-size: 10px;
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: keep-all;
+  padding: 0 3px;
 }
 .recommend-item .recommend-count {
   position: absolute;

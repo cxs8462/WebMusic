@@ -3,11 +3,10 @@ import Swiper from 'swiper'
 import './Banner.css'
 import 'swiper/css/swiper.min.css'
 function Banner(props){
-    const {picList}=props
+    const {bannerList}=props
     const [picstate,setPicstate]=useState(null)
-
     useEffect (() => {
-        if (picList.length && !picstate){
+        if (bannerList.length && !picstate){
             let newSliderSwiper = new Swiper(".slider-container", {
               loop: true,
               autoplay: {
@@ -18,7 +17,7 @@ function Banner(props){
             })
             setPicstate(newSliderSwiper)
         }
-      }, [picList.length, picstate])
+      }, [bannerList.length, picstate])
 
     return(
         <div className='bannerbox'>
@@ -27,7 +26,7 @@ function Banner(props){
                 <div className="slider-container">
                     <div className="swiper-wrapper">
                     {
-                        picList.map ((slider,index) => {
+                        bannerList.map ((slider,index) => {
                         return (
                             <div className="swiper-slide" key={slider+index}>
                             <div className="slider-nav">

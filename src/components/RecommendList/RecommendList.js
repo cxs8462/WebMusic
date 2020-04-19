@@ -2,7 +2,7 @@ import React from 'react'
 import './RecommendList.css'
 function RecommendList(props){
     const {recommendList}=props
-    if(JSON.stringify(recommendList) == "{}"||recommendList.length===0){
+    if(JSON.stringify(recommendList) == "[]"||!recommendList){
         return <h3 style={{textAlign:"center"}}>无数据</h3>
     }
     const count=num=>{

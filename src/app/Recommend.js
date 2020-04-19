@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from '../components/Banner/Banner'
 import RecommendList from '../components/RecommendList/RecommendList'
 import Scroll from './scroll'
-function Recommend(){
-    const picList=[1,2,3,4].map(item=>{
-        return {imageUrl:'http://p1.music.126.net/ZYLJ2oZn74yUz5x8NBGkVA==/109951164331219056.jpg'}
-    })
-    const recommendList = [1,2,3,4,5,6,7,8,9,10].map (item => {
-        return {
-          id: 1,
-          picUrl: "https://p1.music.126.net/fhmefjUfMD-8qtj3JKeHbA==/18999560928537533.jpg",
-          playCount: 17171122,
-          name: "朴树、许巍、李健、郑钧、老狼、赵雷"
+import {connect} from 'react-redux'
+import * as actionCreators from '../store/actionCreators'
+import Login from '../components/Login/Login'
+
+function Recommend(props){
+    const {bannerList,recommendList,is}=props
+    const {getBannerList,getRecommendList,setLogin}=props
+    useEffect(()=>{
+        if(bannerList.length!=0&&recommendList.length!=0){
+            return
         }
-      })
+       
+        async function getdata(){
+            await getRecommendList()
+            await getBannerList()
+            setLogin()
+            console.log(is)
+        }
+          getdata()
+    },[])
     return(
         <div style={
             {
@@ -23,9 +31,10 @@ function Recommend(){
                 width: '100%'
             }
         }>
+            <Login is={is}/>
             <Scroll>
                 <div>
-                    <Banner picList={picList}/>
+                    <Banner bannerList={bannerList}/>
                     <RecommendList recommendList={recommendList}/>  
                 </div>
             
@@ -33,5 +42,24 @@ function Recommend(){
         </div>
     )
 }
-
-export default React.memo(Recommend)
+const setState=(state)=>{
+    return {
+    bannerList:state.bannerList,
+    recommendList:state.recommendList,
+    is:state.isIndex
+    }
+}
+const dis=(dispath)=>{
+    return {
+        getBannerList(){
+             dispath(actionCreators.getBannerList())
+         },
+         getRecommendList(){
+            dispath(actionCreators.getRecommendList())
+         },
+         setLogin(){
+             dispath(actionCreators.setIndex())
+         }
+    }
+}
+export default connect(setState,dis)(React.memo(Recommend))
