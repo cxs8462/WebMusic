@@ -1,0 +1,33 @@
+.recommendbox h3 {
+  padding: 1rem;
+}
+.itembox {
+  text-align: center;
+}
+.recommend-item {
+  position: relative;
+  width: 30%;
+  display: inline-block;
+  margin: 1%;
+}
+.recommend-item img {
+  width: 100%;
+}
+.recommend-item span {
+  font-size: 10px;
+}
+.recommend-item .recommend-count {
+  position: absolute;
+  top: 0;
+  right: 3px;
+}
+.recommend-item .recommend-count span {
+  color: #ffffff9a;
+  font-size: x-small;
+  border-radius: 3px;
+  background: linear-gradient(hsla(0, 0%, 43%, 0.4), hsla(0, 0%, 100%, 0));
+}
+.recommend-item .recommend-count span i {
+  font-size: x-small;
+  margin-right: 2px;
+}

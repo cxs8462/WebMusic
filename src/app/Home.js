@@ -1,7 +1,7 @@
 import React from 'react';
 import {renderRoutes} from 'react-router-config'
 import './Home.css'
-import Top from '../components/Tab'
+import Top from '../components/Tab/Tab'
 function Home(props){
     return(
         <div>
