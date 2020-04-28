@@ -2,7 +2,6 @@ import React,{useState, useEffect} from 'react';
 import './Login.css'
 function Login(props){
         const {is}=props  
-        console.log(is)
         useEffect(()=>{
             
         },[])

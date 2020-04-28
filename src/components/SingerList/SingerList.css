@@ -1,0 +1,31 @@
+.singerlist {
+  margin-top: 1rem;
+  width: 100%;
+}
+.singerlist-item {
+  margin: 0 1rem;
+  height: 4rem;
+  line-height: 4rem;
+  transition: 0.2s ease-in-out;
+  border-bottom: 1px solid #4b3c3c3b;
+}
+.singerlist-item div {
+  float: left;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 0.2rem;
+  margin-left: 1rem;
+}
+.singerlist-item div img {
+  width: 100%;
+  height: 100%;
+}
+.singerlist-item div:nth-child(2) {
+  width: auto;
+  line-height: 4rem;
+  padding: 0;
+  color: rgba(49, 47, 47, 0.63);
+}
+.singerlist-item:active {
+  background: rgba(214, 129, 129, 0.685);
+}

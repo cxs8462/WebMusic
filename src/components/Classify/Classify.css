@@ -1,0 +1,25 @@
+.classityitem {
+  width: 100%;
+  height: 1.6rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.classityitem span {
+  font-size: 14px;
+  margin-left: 6px;
+  padding: 2px 4px;
+  background: rgba(216, 78, 78, 0.548);
+  border-radius: 8px;
+  vertical-align: center;
+  color: whitesmoke;
+  line-height: 1.5rem;
+}
+.classityitem span:nth-child(1) {
+  background: whitesmoke;
+  color: #928888;
+}
+.classityitem .selected {
+  background: white;
+  color: #cf5454;
+  border: 1px solid #cf5454;
+}

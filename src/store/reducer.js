@@ -4,7 +4,8 @@ import * as actionTypes from './constants'
 const defaultState = {
     bannerList: [],
     recommendList: [],
-    isIndex:true
+    isIndex:true,
+    singerList:[]
 }
 
 export default (state = defaultState, action) => {
@@ -18,6 +19,12 @@ export default (state = defaultState, action) => {
         return newState
     case actionTypes.CHANGE_RECOMMEND_LOGIN:
         newState['isIndex']= !newState['isIndex']
+        return newState
+    case actionTypes.CHANGE_SINGER_HOTLIST:
+        newState['singerList']= action.data
+        return newState
+    case actionTypes.CHANGE_SINGER_LIST:
+        newState['singerList']= action.data
         return newState
       default:
         return newState;
