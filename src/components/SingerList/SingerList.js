@@ -2,9 +2,9 @@ import React,{useEffect} from 'react';
 import './SingerList.css'
 
 function SingerList(props){
-    const {data,setheight}=props
-    const select=(e)=>{
-        console.log(e.currentTarget.getAttribute('accountId'))
+    const {data,setheight,click}=props
+    const select=(item)=>{
+        click(item.id)
     }
     useEffect(()=>{
         const [s]=document.getElementsByClassName('singerlist')
@@ -16,9 +16,8 @@ function SingerList(props){
                     return (
                         <div 
                         key={item.name+index} 
-                        accountId={item.accountId} 
                         className='singerlist-item'
-                        onClick={select}>
+                        onClick={()=>{select(item)}}>
                             <div>
                                 <img src={item.picUrl+'?param=300x300'}></img>
                             </div>

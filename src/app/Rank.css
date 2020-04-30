@@ -1,0 +1,56 @@
+.rank-box {
+  padding: 1rem;
+  overflow: hidden;
+}
+.rank-list1 {
+  height: 9rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+}
+.rank-list1 .rank-rank {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex: 18;
+  padding: 2rem;
+}
+.rank-list1 .rank-rank p {
+  text-align: left;
+  color: #9e9e9e;
+  margin-bottom: 0.3rem;
+}
+.rank-list1 .rank-img img {
+  width: 9rem;
+}
+.rank-list2 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.rank-list2 div {
+  background: white;
+  width: 30%;
+  margin-bottom: 1rem;
+  padding: 0.2rem;
+}
+.rank-list2 div .rank-img {
+  margin-bottom: 0;
+  width: 100%;
+}
+.rank-list2 div .rank-img img {
+  width: 100%;
+}
+.rank-list2 div .rank-name {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0rem;
+}
+.rank-list2 div .rank-name p {
+  color: #949494;
+  white-space: nowrap;
+  overflow: hidden;
+}

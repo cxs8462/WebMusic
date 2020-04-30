@@ -5,10 +5,11 @@ import Scroll from './scroll'
 import {connect} from 'react-redux'
 import * as actionCreators from '../store/actionCreators'
 import Login from '../components/Login/Login'
+import { renderRoutes } from 'react-router-config';
 
 function Recommend(props){
     const {bannerList,recommendList,is}=props
-    const {getBannerList,getRecommendList,setLogin}=props
+    const {getBannerList,getRecommendList}=props
     useEffect(()=>{
         if(bannerList.length!=0&&recommendList.length!=0){
             return
@@ -17,8 +18,6 @@ function Recommend(props){
         async function getdata(){
             await getRecommendList()
             await getBannerList()
-            setLogin()
-            console.log(is)
         }
           getdata()
     },[])
@@ -39,6 +38,9 @@ function Recommend(props){
                 </div>
             
             </Scroll>
+            <div>
+            { renderRoutes (props.route.routes) }
+            </div>
         </div>
     )
 }
@@ -56,9 +58,6 @@ const dis=(dispath)=>{
          },
          getRecommendList(){
             dispath(actionCreators.getRecommendList())
-         },
-         setLogin(){
-             dispath(actionCreators.setIndex())
          }
     }
 }

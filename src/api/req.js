@@ -18,5 +18,12 @@ export const getSingerListRequest= (singer,where,type,page) => {
 export const getRankListRequest = () => {
   return req.get (`/toplist/detail`);
 }
+export const getAlbumDetailRequest = id => {
+  return req.get (`/playlist/detail?id=${id}`);
+}
+
+export const getSingersRequest = id => {
+  return req.get (`/artists?id=${id}`);
+};
 
 
