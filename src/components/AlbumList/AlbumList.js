@@ -2,13 +2,17 @@ import React from 'react';
 import './AlbumList.css'
 
 function AlbumList(props){
-    const {data}=props
+    const {data,add}=props
 
-    const allvieo=item=>{
-        console.log(item)
+    const allvieo=()=>{
+        for(let i=0;i<data.length;i++){
+            add(data[i])
+        }
+        alert('添加歌曲成功，请前往播放器列表查看')
     }
     const vieo=item=>{
-        console.log(item)
+        add(item)
+        alert('添加歌曲成功，请前往播放器列表查看')
     }
     return(
         <div className='album-list'>

@@ -9,7 +9,7 @@ import Loding from '../../components/Login/Login'
 
 function Singer(props){
     const id = props.match.params.id
-    const {data,loding,getdate}=props
+    const {data,loding,getdate,addSong}=props
     const {artist,hotSongs}=data
       const goBack=()=>{
         setShowStatus (false)
@@ -30,7 +30,7 @@ function Singer(props){
             <div className='album'>
                 <Loding is={loding}/>
                 <Header goBack={goBack} data={{img:artist.picUrl,name:artist.name}}/>
-                <AlbumList data={hotSongs} />
+                <AlbumList add={addSong} data={hotSongs} />
             </div>
             
         </CSSTransition>
@@ -46,6 +46,9 @@ const getDate=dispatch=>{
     return{
         getdate(id){
             dispatch(actionCreators.getSingers(id))
+        },
+        addSong(item){
+            dispatch(actionCreators.getSongs(item))
         }
     }
 }

@@ -9,9 +9,9 @@ export const CHANGE_SINGER_LIST = 'singer/SINGER_LIST'
 export const CHANGE_SINGER_SINGERS = 'singer/SINGER_SINGERS'
 export const CHANGE_SINGERS_LODING = 'singer/SINGERS_LODING'
 
-
-
 export const CHANGE_RANK = 'rank/RANK'
 
 export const CHANGE_CURRENT_ALBUM = 'album/CHANGE_CURRENT_ALBUM';
 export const CHANGE_ENTER_LOADING = 'album/CHANGE_ENTER_LOADING';
+
+export const CHANGE_PLAER_LIST = 'album/CHANGE_PLAER_LIST';

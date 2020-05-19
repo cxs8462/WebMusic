@@ -25,5 +25,7 @@ export const getAlbumDetailRequest = id => {
 export const getSingersRequest = id => {
   return req.get (`/artists?id=${id}`);
 };
-
+export const getlyricRequest = id => {
+  return req.get (`/lyric?id=${id}`);
+};
 

@@ -6,7 +6,8 @@ import {
   getSingerListRequest,
   getRankListRequest,
   getAlbumDetailRequest,
-  getSingersRequest
+  getSingersRequest,
+  getlyricRequest
 } from '../api/req';
 
 export const exclassity={a:'',b:'',c:'',d:0}
@@ -48,6 +49,10 @@ export const lodingtrue = (type) => ({
 export const lodingfalse = (type) => ({
   type: type,
   data: false
+})
+export const changeSongs = (data) => ({
+  type: actionTypes.CHANGE_PLAER_LIST,
+  data: data
 })
 
 export const getBannerList = () => {
@@ -102,7 +107,7 @@ export const getRank = () => {
       dispatch (
         changeRank (data.list)
         )}).catch (() => {
-      console.log ("歌手列表传输错误");
+      console.log ("排行榜传输错误");
     });
   }
 };
@@ -129,5 +134,19 @@ export const getSingers = (id) => {
       console.log ("获取歌单数据失败！")
     });
   }
-};
+}
+export const getSongs = (item) => {
+  return dispatch => {
+    getlyricRequest(item.id).then((res)=>{
+      let data={
+        lyric:res.lrc.lyric,
+        name:item.name,
+        singer:item.ar[0].name,
+        cover:item.al.picUrl,
+        musicSrc:'https://music.163.com/song/media/outer/url?id='+item.id+'.mp3'
+      }
+      dispatch (changeSongs (data))
+    })
+  }
+}
 
