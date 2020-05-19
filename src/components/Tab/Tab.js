@@ -22,7 +22,9 @@ function Tab(props){
             <div className='head'>
                 <span className='tab-menu'><i className='iconfont'>&#xe648;</i></span>
                 <span className='tab-title'>Web Music</span>
+                <NavLink to="/Search">
                 <span className='tab-seach'><i className='iconfont'>&#xe63c;</i></span>
+                </NavLink>
             </div>
             <div className='tab' >
                 <NavLink to="/recommend" select='recommend' onClick={change} activeClassName="selected">
