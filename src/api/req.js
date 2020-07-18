@@ -5,7 +5,7 @@ export const getBannerRequest = () => {
 }
 
 export const getRecommendListRequest = () => {
-  return req.get ('/personalized');
+  return req.get ('/personalized?limit=30');
 }
 export const getHotSingerListRequest = (count) => {
   return req.get(`/top/artists?offset=${count}`);
@@ -29,3 +29,7 @@ export const getlyricRequest = id => {
   return req.get (`/lyric?id=${id}`);
 };
 
+
+export const getSeacherRes = keywords =>{
+  return req.get(`/search?limit=50&keywords=${keywords}`)
+}

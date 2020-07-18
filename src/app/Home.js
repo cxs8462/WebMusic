@@ -11,7 +11,7 @@ function Home(props){
     return(
         <div>
             <Top/>
-            <ReactJkMusicPlayer lyricClassName='player' {...player} audioLists={songlist}/>
+            <ReactJkMusicPlayer  lyricClassName='player' {...player} audioLists={songlist}/>
             {renderRoutes(props.route.routes)}
         </div>
     )

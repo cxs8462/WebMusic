@@ -1,11 +1,8 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import './Login.css'
 function Login(props){
         const {is}=props  
-        useEffect(()=>{
-            
-        },[])
-        return (
+                return (
             <div className='isLogin' style={is?{}:{display:'none'}}>
                 <div className='wait1'>
                     

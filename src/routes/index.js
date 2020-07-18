@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import {Redirect} from 'react-router-dom'
 import Home from '../app/Home'
+import Loading from '../components/Login/Login'
 const Rank = lazy(()=>import ('../app/Rank'))
 const Recommend = lazy(()=>import ('../app/Recommend'))
 const Singers = lazy(()=>import ('../app/Singers'))
@@ -10,7 +11,7 @@ const Search = lazy(()=>import ('../app/Search/Search'))
 
 const SuspenseComponent = Component => props => {
     return (
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loading is={true}/>}>
         <Component {...props}></Component>
       </Suspense>
     )
